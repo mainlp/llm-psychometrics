@@ -15,8 +15,6 @@
 \usepackage{graphicx}
 \usepackage{rotating}
 
-\usepackage{todonotes}
-
 \title{Do LLMs Give Psychometrically Plausible Responses \\ in Educational Assessments?}
 
 \author{}
@@ -121,7 +119,7 @@ We empirically evaluate the psychometric plausibility of 18 LLMs across two data
 
 \paragraph{NAEP.}
 
-The National Assessment of Educational Progress (NAEP) is a nation-wide and congressionally mandated educational assessment program in the United States.\footnote{\url{https://nces.ed.gov/nationsreportcard/about/}} NAEP involves tests across ten subjects at grades 4, 8, and 12. The tests include selected response items as well as constructed response items. A subset of items from previous years along with student response distributions and IRT item parameters are published and can be accessed online through the Questions Tool.\footnote{\url{https://www.nationsreportcard.gov/nqt/}} For our experiments, we used only four-option multiple-choice items from \emph{Reading}, \emph{U.S. History}, and \emph{Economics} tests, because most items in these subjects do not heavily rely on images, so that the LLM input can be text-only. For items that do include images, we included the alternative text and manually excluded items that were unanswerable without access to the full image. For some reading items, the full passage text was unavailable due to licensing issues -- we also excluded these items.\footnote{Refer to our code repository for detailed filter criteria and excluded items: \url{TODO}} This resulted in a total of 252 items in reading, 204 in history, and 93 in economics.
+The National Assessment of Educational Progress (NAEP) is a nation-wide and congressionally mandated educational assessment program in the United States.\footnote{\url{https://nces.ed.gov/nationsreportcard/about/}} NAEP involves tests across ten subjects at grades 4, 8, and 12. The tests include selected response items as well as constructed response items. A subset of items from previous years along with student response distributions and IRT item parameters are published and can be accessed online through the Questions Tool.\footnote{\url{https://www.nationsreportcard.gov/nqt/}} For our experiments, we used only four-option multiple-choice items from \emph{Reading}, \emph{U.S. History}, and \emph{Economics} tests, because most items in these subjects do not heavily rely on images, so that the LLM input can be text-only. For items that do include images, we included the alternative text and manually excluded items that were unanswerable without access to the full image. For some reading items, the full passage text was unavailable due to licensing issues -- we also excluded these items.\footnote{Refer to our code repository for detailed filter criteria and excluded items: \url{https://anonymous.4open.science/r/llm-psychometrics-CC57}} This resulted in a total of 252 items in reading, 204 in history, and 93 in economics.
 
 \paragraph{CMCQRD.}
 
@@ -239,7 +237,7 @@ The two datasets we used contain response data from two different populations of
 
 \section*{Ethical considerations}
 
-We see no ethical issues related to this work. All experiments were conducted with publicly available data and open-source software, and we have made all of our code openly available for reproducibility. The two datasets we used only contain highly aggregated response data and do not include any information that could lead to the identification of individual test takers.
+We see no ethical issues related to this work. All experiments were conducted with publicly available data and open-source software, and we have made all of our code openly available for reproducibility.\footnote{\url{https://anonymous.4open.science/r/llm-psychometrics-CC57}} The two datasets we used only contain highly aggregated response data and do not include any information that could lead to the identification of individual test takers.
 
 
 \bibliography{references}
