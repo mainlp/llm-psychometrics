@@ -1,0 +1,7 @@
+project:
+  output-dir: output
+
+format:
+  pdf:
+    documentclass: scrartcl
+    toc: true

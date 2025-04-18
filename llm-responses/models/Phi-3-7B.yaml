@@ -1,0 +1,5 @@
+model: TransformersModel
+kwargs:
+  model_path: microsoft/Phi-3-small-128k-instruct
+  dtype: float16
+  trust_remote_code: true

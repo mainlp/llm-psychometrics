@@ -1,0 +1,4 @@
+model: TransformersModel
+kwargs:
+  model_path: microsoft/Phi-3-medium-4k-instruct
+  trust_remote_code: true

@@ -1,0 +1,3 @@
+model: TransformersModel
+kwargs:
+  model_path: meta-llama/Llama-3.1-8B-Instruct

@@ -1,0 +1,4 @@
+model: TransformersModel
+kwargs:
+  model_path: meta-llama/Llama-3.1-70B-Instruct
+  quantization: int8

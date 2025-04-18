@@ -1,0 +1,3 @@
+model: TransformersModel
+kwargs:
+  model_path: Qwen/Qwen2.5-3B-Instruct

@@ -1,0 +1,4 @@
+model: TransformersModel
+kwargs:
+  model_path: Qwen/Qwen2.5-72B-Instruct
+  quantization: int8
