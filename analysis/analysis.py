@@ -42,16 +42,18 @@ MODELS = {
     "Qwen2.5-14B": "Qwen",
     "Qwen2.5-32B": "Qwen",
     "Qwen2.5-72B": "Qwen",
-    "OracleBaseline": "Baseline",
-    "UniformBaseline": "Baseline",
-    "HumanMode": "Baseline",
+    "OracleBaseline": "OracleBaseline",
+    "UniformBaseline": "UniformBaseline",
+    "HumanMode": "Human",
 }
 MODEL_FAMILY_COLORS = {
     "Llama": "#4c72b0",
     "OLMo": "#dd8452",
     "Phi": "#55a868",
     "Qwen": "#c44e52",
-    "Baseline": "#8c8c8c",
+    "OracleBaseline": "#666666",
+    "UniformBaseline": "#999999",
+    "Human": "#da8bc3",
 }
 MODEL_PALETTE = [MODEL_FAMILY_COLORS[family] for model, family in MODELS.items()]
 
@@ -114,7 +116,7 @@ for data in [naep_data, cmcqrd_data]:
     # Ensure consistent order of subsets and models
     subsets = data["subset"].unique()
     data["subset"] = data["subset"].astype("category").cat.set_categories(subsets)
-    data["model"] = data["model"].astype("category").cat.set_categories(MODELS.keys())
+    data["model"] = data["model"].astype("category").cat.set_categories([model for model in MODELS if model != "HumanMode"])
     assert data["model"].notna().all(), "Missing model"
     data["model_family"] = data["model"].map(MODELS)
     data.sort_values(["subset", "model"], inplace=True)
@@ -152,12 +154,12 @@ cmcqrd_accuracy_human["model_correct"] = cmcqrd_accuracy_human.apply(
 )
 cmcqrd_accuracy_all = pd.concat([cmcqrd_accuracy_models, cmcqrd_accuracy_human])
 
-# Hatch for human mode
 sns.barplot(
     data=naep_accuracy_all,
     x="subset",
     y="model_correct",
     hue="model",
+    width=0.9,
     palette=MODEL_PALETTE,
     err_kws={"linewidth": 1.5},
     ax=ax1,
@@ -170,6 +172,7 @@ sns.barplot(
     x="subset",
     y="model_correct",
     hue="model",
+    width=0.9,
     palette=MODEL_PALETTE,
     legend=False,
     ax=ax2,
@@ -292,6 +295,7 @@ sns.barplot(
     y="optimized_temperature",
     hue="model",
     errorbar=None,
+    width=0.9,
     palette=MODEL_PALETTE,
     ax=ax1,
 )
@@ -304,6 +308,7 @@ sns.barplot(
     y="optimized_temperature",
     hue="model",
     errorbar=None,
+    width=0.9,
     palette=MODEL_PALETTE,
     legend=False,
     ax=ax2,
@@ -347,6 +352,7 @@ sns.barplot(
     x="subset",
     y="kldiv",
     hue="model",
+    width=0.9,
     palette=MODEL_PALETTE,
     err_kws={"linewidth": 1.5},
     ax=ax1,
@@ -359,6 +365,7 @@ sns.barplot(
     x="subset",
     y="kldiv",
     hue="model",
+    width=0.9,
     palette=MODEL_PALETTE,
     legend=False,
     ax=ax2,
@@ -383,6 +390,7 @@ sns.barplot(
     x="subset",
     y="optimized_kldiv",
     hue="model",
+    width=0.9,
     palette=MODEL_PALETTE,
     err_kws={"linewidth": 1.5},
     ax=ax1,
@@ -395,6 +403,7 @@ sns.barplot(
     x="subset",
     y="optimized_kldiv",
     hue="model",
+    width=0.9,
     palette=MODEL_PALETTE,
     legend=False,
     ax=ax2,
