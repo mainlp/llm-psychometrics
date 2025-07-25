@@ -1,6 +1,22 @@
 # Do LLMs give psychometrically plausible responses in educational assessments?
 
-This repository contains code, data, and results for the paper *Do LLMs give psychometrically plausible responses in educational assessments?*.
+This repository contains code, data, and results for the paper [*Do LLMs give psychometrically plausible responses in educational assessments?*](https://aclanthology.org/2025.bea-1.21/)
+
+```bibtex
+@inproceedings{sauberli-etal-2025-llms,
+  title = "Do {LLM}s Give Psychometrically Plausible Responses in Educational Assessments?",
+  author = {S{\"a}uberli, Andreas and Frassinelli, Diego and Plank, Barbara},
+  editor = {Kochmar, Ekaterina and Alhafni, Bashar and Bexte, Marie and Burstein, Jill and Horbach, Andrea and Laarmann-Quante, Ronja and Tack, Ana{\"i}s and Yaneva, Victoria and Yuan, Zheng},
+  booktitle = "Proceedings of the 20th Workshop on Innovative Use of NLP for Building Educational Applications (BEA 2025)",
+  month = jul,
+  year = "2025",
+  address = "Vienna, Austria",
+  publisher = "Association for Computational Linguistics",
+  url = "https://aclanthology.org/2025.bea-1.21/",
+  pages = "266--278",
+  ISBN = "979-8-89176-270-1",
+}
+```
 
 ## Repository structure
 
